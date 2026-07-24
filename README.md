@@ -1,5 +1,5 @@
-# -
 随便vibecoding了一下>&lt;
+
 # 3D 粒子手势交互系统
 
 基于 Three.js + MediaPipe Hands 的 3D 粒子交互系统，通过摄像头单手张合控制粒子扩散与聚拢。
