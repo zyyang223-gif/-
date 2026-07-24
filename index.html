@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D 粒子手势交互</title>
+  <link rel="stylesheet" href="/src/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="loading">
+    <div class="spinner"></div>
+    <div id="load-step">初始化…</div>
+  </div>
+  <div id="hud"></div>
+  <div id="panel">
+    <div class="panel-title">粒子控制</div>
+    <div class="panel-group">
+      <div class="panel-label">形状</div>
+      <div class="shape-grid">
+        <button class="shape-btn active" data-shape="heart">爱心</button>
+        <button class="shape-btn" data-shape="flower">花朵</button>
+        <button class="shape-btn" data-shape="saturn">土星</button>
+        <button class="shape-btn" data-shape="dna">DNA</button>
+        <button class="shape-btn" data-shape="firework">烟花</button>
+      </div>
+    </div>
+    <div class="panel-group">
+      <div class="panel-label">颜色</div>
+      <div class="color-row">
+        <input type="color" id="color-picker" value="#ff3366">
+        <div class="color-preset" data-color="#ff3366" style="background:#ff3366"></div>
+        <div class="color-preset" data-color="#ff66aa" style="background:#ff66aa"></div>
+        <div class="color-preset" data-color="#00ddaa" style="background:#00ddaa"></div>
+        <div class="color-preset" data-color="#ddaa33" style="background:#ddaa33"></div>
+        <div class="color-preset" data-color="#ffffff" style="background:#ffffff"></div>
+      </div>
+    </div>
+    <div class="panel-group">
+      <div class="panel-label">手势</div>
+      <div class="gesture-hint">
+        <div>🖐 张开 → 扩散</div>
+        <div>✊ 握拳 → 聚拢</div>
+      </div>
+    </div>
+    <div class="panel-group">
+      <div class="data-row"><span>手部</span><span id="hand-state">未检测</span></div>
+      <div class="data-row"><span>扩散</span><span id="scale-val">0.00</span></div>
+      <div class="data-row"><span>FPS</span><span id="fps-val">60</span></div>
+    </div>
+  </div>
+  <div class="cam-preview">
+    <video id="video" playsinline></video>
+    <canvas id="cam-canvas"></canvas>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
